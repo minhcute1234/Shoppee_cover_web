@@ -1,0 +1,127 @@
+/* reset CSS */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+}
+
+#toast {
+    position: fixed;
+    top: 10px;
+    right: 32px;
+}
+
+.main {
+   margin: auto;
+   margin-top: 10px;
+
+}
+
+
+.toast {
+    display: flex;
+    padding: 20px 0;
+    align-items: center;
+    min-width: 400px;
+    max-width: 450px;
+    border-left: 4px solid #47d764;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+    animation: slideInLeft ease 0.4s, fadeOut linear 1s 3s forwards;
+    /* //forwards dừng ở điểm cuối của animation */
+
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0.3;
+        transform: translateX(calc(100% + 32px));
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+.toast + .toast {
+    margin-top: 24px;
+}
+
+.toast__icon,
+.toast__close{
+    padding: 0 16px;
+
+}
+
+
+.toast__icon {
+    font-size: 24px;
+
+}
+
+.toast--success {
+    border-color: #47d764;
+}
+
+.toast--success .toast__icon {
+    color: #47d764;
+    
+}
+
+.toast--warning {
+    border-color: #ffc021;
+}
+
+.toast--warning .toast__icon {
+    color: #ffc021;
+}
+
+.toast--error {
+    color: #f14a07;
+}
+
+.toast--error .toast__icon{
+    color: #f14a07;
+}
+
+.toast__body {
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+.toast__title {
+    font-weight: 600;
+    color: #333;
+    font-size:20px;
+    
+}
+
+.toast__msg {
+    color: #888;
+    margin-top: 12px;
+    padding-right: 32px;
+    font-size: 14px;
+}
+
+.toast__close {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.toast__close:hover {
+    opacity: 0.6;
+}
+
